@@ -58,7 +58,7 @@ app.get('/', (req, res) => {
     </head>
     <body>
       <form action="/login" method="POST">
-        <label for="username">Username:</label>
+        <label for="username">Username*:</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
