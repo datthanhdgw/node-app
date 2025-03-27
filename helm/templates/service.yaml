@@ -6,10 +6,10 @@ metadata:
   namespace: node-app
 spec:
   selector:
-    app:node-app
+    app: node-app
   type: NodePort 
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080 # Match the port where your Go application is running
+      port: 80
+      targetPort: 3000 # Match the port where your Go application is running
       nodePort: 32003
