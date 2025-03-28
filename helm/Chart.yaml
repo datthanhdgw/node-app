@@ -1,5 +1,5 @@
 apiVersion: v2
-name: rnode-app
+name: node-app
 description: node-app
 type: application
 version: 0.1.0
