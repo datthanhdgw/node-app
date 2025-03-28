@@ -19,9 +19,9 @@ app.get('/', (req, res) => {
     <body>
       <form action="/login" method="POST">
         <h2 style="text-align: center; color: #4a5568; margin-bottom: 24px;">Welcome Back</h2>
-        <label for="username">Username(*):</label>
+        <label for="username">Username(**):</label>
         <input type="text" id="username" name="username" required>
-        <label for="password">Password(*):</label>
+        <label for="password">Password(**):</label>
         <input type="password" id="password" name="password" required>
         <button type="submit">Login</button>
       </form>
