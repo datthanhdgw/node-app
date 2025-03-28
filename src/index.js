@@ -1,8 +1,10 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = 3000;
 
-app.use(express.urlencoded({ extended: true })); // Middleware để parse form data
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
   res.send(`
@@ -12,52 +14,11 @@ app.get('/', (req, res) => {
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Login</title>
-      <style>
-        body {
-          font-family: Arial, sans-serif;
-          background-color: #f4f4f9;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          margin: 0;
-        }
-        form {
-          background: #fff;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          width: 300px;
-        }
-        label {
-          display: block;
-          margin-bottom: 8px;
-          font-weight: bold;
-        }
-        input {
-          width: 100%;
-          padding: 8px;
-          margin-bottom: 16px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        }
-        button {
-          width: 100%;
-          padding: 10px;
-          background-color: #007bff;
-          color: white;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          font-size: 16px;
-        }
-        button:hover {
-          background-color: #0056b3;
-        }
-      </style>
+      <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
       <form action="/login" method="POST">
+        <h2 style="text-align: center; color: #4a5568; margin-bottom: 24px;">Welcome Back</h2>
         <label for="username">Username(*):</label>
         <input type="text" id="username" name="username" required>
         <label for="password">Password(*):</label>
